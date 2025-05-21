@@ -1,0 +1,487 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3ebef;
+    color: rgb(26, 21, 21);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1; /* Nội dung chính sẽ chiếm phần không gian còn lại */
+}
+/* Header Styling */
+header {
+    background-color: #0d99e4;
+    color: white;
+    padding: 1em;
+    display: flex; /* Xếp theo hàng ngang */
+    align-items: center; /* Căn giữa logo và chữ theo chiều dọc */
+    justify-content: flex-start; /* Đảm bảo mọi thứ bắt đầu từ trái */
+    
+}
+
+header .logo {
+    display: flex;
+    flex-direction: column; /* Xếp chữ theo chiều dọc */
+    align-items: flex-start; /* Căn trái chữ */
+}
+
+header img {
+    max-width: 50px; /* Thay đổi kích thước logo */
+    max-height: 50px;
+    margin-bottom: 10px; /* Thêm khoảng cách dưới logo */
+}
+
+header h1 {
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+/* Các chữ xếp dọc */
+header h1 span {
+    display: block; /* Mỗi phần tử (chữ) sẽ xếp theo chiều dọc */
+    line-height: 1.2; /* Khoảng cách giữa các chữ */
+}
+
+
+/* Nếu muốn căn chữ thành 3 dòng */
+header h1 span {
+    display: block; /* Mỗi phần sẽ lên một dòng mới */
+}
+
+
+/* Logo Styling */
+header .logo {
+    display: flex;
+    flex-direction: row; /* Xếp logo và chữ theo cột */
+    align-items: flex-start; /* Căn logo và chữ về phía bên trái */
+}
+
+header img {
+    max-width: 80px; /* Giới hạn chiều rộng của logo */
+    max-height: 80px; /* Giới hạn chiều cao của logo */
+    object-fit: contain; /* Đảm bảo tỷ lệ của ảnh */
+}
+
+header h1 {
+    font-size: 1.5em; /* Kích thước chữ */
+    margin: 15px; /* Loại bỏ margin mặc định */
+    text-align: left; /* Căn chữ sang trái */
+}
+
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    justify-content:left; /* Căn lề trái các item */
+    align-items: center; /* Căn giữa các item theo chiều dọc */
+    background-color: #ba2952;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng của list */
+    padding: 0; /* Xóa khoảng cách padding mặc định */
+    margin: 0; /* Xóa khoảng cách margin mặc định */
+    display: flex; /* Sử dụng flexbox để xếp các item trong cùng một dòng */
+    transition: background-color 0.4s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+nav ul li {
+    margin-right: 10px; /* Khoảng cách giữa các item */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em; /* Thêm khoảng cách bên trái và phải cho các button */
+    font-size: 1.1em;
+    display: block; /* Đảm bảo các link chiếm không gian */
+}
+
+nav a:hover {
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+    background-color: #33e3c0;
+}
+
+
+
+/* Home Section Styling */
+#home {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.carousel {
+    position: relative;
+    width: 70vw;        /* Chiếm toàn bộ chiều rộng viewport */
+    height: 100vh;       /* Chiếm toàn bộ chiều cao viewport */
+    overflow: hidden;
+    margin: 0; 
+    z-index: 1; /* Giảm z-index để nav ở trên carousel */
+    left: 30lvh;
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 9s infinite;
+}
+
+/* Tạo độ trễ cho từng ảnh để chúng thay phiên nhau hiển thị */
+.carousel img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.carousel img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.carousel img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Keyframes để thay đổi opacity */
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Form Styling */
+form {
+    background-color: white;
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 10px; /* Bo góc thêm để mềm mại */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Tăng độ đổ bóng */
+}
+
+form h2 {
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4862e4;
+    color: white;
+    font-size: 1.1em;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển động khi hover */
+}
+
+button:hover {
+    background-color: #33e3c0;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.register-button {
+    position: fixed;
+    bottom: 640px;    /* Cách đáy trang 20px */
+    right: 20px;     /* Cách bên phải trang 20px */
+    background-color: #e44867;
+    color: white;
+    padding: 0.7em 1.2em;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    z-index: 1000;   /* Đảm bảo button luôn hiển thị phía trên các phần khác */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.register-button:hover {
+    background-color: #33e3c0;
+}
+
+
+/* Carousel Image Styling */
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1d4eaa;
+    color: white;
+    padding: 1.5em;
+    margin-top: auto;
+    text-align: left; /* Đổi từ 'center' sang 'left' */
+}
+
+footer .organizer-info {
+    padding-left: 20px; /* Căn lề trái */
+}
+
+footer .organizer-info h2 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+}
+
+footer .organizer-info p {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+}
+
+footer .organizer-info a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer .organizer-info a:hover {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sử dụng flexbox để tạo 2 cột */
+.race-container {
+    display: flex;
+    flex-wrap: wrap;  /* Cho phép các item xuống dòng khi không đủ không gian */
+    gap: 16px;  /* Khoảng cách giữa các item */
+    justify-content: space-between;
+}
+
+.race-item {
+    flex: 1 1 calc(50% - 16px); /* Mỗi item chiếm 50% chiều rộng, trừ khoảng cách giữa các item */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.race-item img.race-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.race-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.race-item p {
+    margin-bottom: 8px;
+}
+
+.race-status {
+    color: red;
+    font-weight: bold;
+}
+
+.countdown {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: green;
+}
+
+/* Đảm bảo mỗi item chiếm 100% chiều rộng trên các màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .race-item {
+        flex: 1 1 100%;  /* Mỗi item chiếm 100% chiều rộng trên màn hình nhỏ */
+    }
+}
+
+.join-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.join-button:hover {
+    background-color: #45a049;
+}
+
+/* Style cho modal */
+.modal {
+    display: none; /* Mặc định là ẩn */
+    position: fixed;
+    z-index: 1; /* Đặt modal lên trên */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Nếu cần cuộn */
+    background-color: rgba(0,0,0,0.4); /* Màu nền bán trong suốt */
+}
+
+/* Nội dung của modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Nút đóng modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS để căn giữa nội dung */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Căn giữa văn bản */
+    height: 100vh; /* Chiều cao đầy trang */
+    margin-top: 50px; /* Thêm khoảng cách từ đầu trang nếu cần */
+}
+
+/* Điều chỉnh kích thước ảnh */
+.race-image1 {
+    max-width: 80%;  /* Giới hạn chiều rộng ảnh */
+    height: auto;    /* Giữ tỷ lệ ảnh */
+    margin-top: 20px; /* Khoảng cách với các nội dung trên */
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Xếp logo và chữ theo cột */
+        align-items: center; /* Căn giữa logo và chữ */
+    }
+
+    header .logo {
+        align-items: center; /* Căn giữa logo và chữ */
+    }
+    header img {
+        max-width: 40px; /* Giảm kích thước logo */
+        max-height: 40px;
+    }
+
+    nav ul {
+        flex-direction:row; /* Xếp các item theo chiều dọc */
+        align-items: center; /* Căn giữa các item */
+    }
+
+    nav ul li {
+        margin-right: 0; /* Loại bỏ khoảng cách bên phải */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới mỗi item */
+    }
+    main .home {
+        margin-top: 1em; /* Giảm khoảng cách trên */
+        margin-bottom: 1em; /* Giảm khoảng cách dưới */
+        align-items: center; /* Căn giữa nội dung */
+        justify-content: center; /* Căn giữa nội dung */
+    } 
+    body a{
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+}
+
+/* Thay đổi kích thước chữ cho các phần tử */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+
+    nav a {
+        font-size: 1em; /* Giảm kích thước chữ */
+    }
+
+    form h2 {
+        font-size: 1.3em; /* Giảm kích thước chữ */
+    }
+
+    footer .organizer-info h2 {
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+    footer .organizer-info p {
+        font-size: 1em; /* Giảm kích thước chữ */
+    }
+    footer .organizer-info a {
+        font-size: 1em; /* Giảm kích thước chữ */
+    }
+
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.1em; /* Giảm kích thước chữ */
+    }
+
+    nav a {
+        font-size: 0.9em; /* Giảm kích thước chữ */
+    }
+
+    form h2 {
+        font-size: 1.2em; /* Giảm kích thước chữ */
+    }
+
+    footer .organizer-info h2 {
+        font-size: 1.1em; /* Giảm kích thước chữ */
+    }
+    footer .organizer-info p {
+        font-size: 0.9em; /* Giảm kích thước chữ */
+    }
+    footer .organizer-info a {
+        font-size: 0.9em; /* Giảm kích thước chữ */
+    }
+    body a{
+        font-size: 0.9em; /* Giảm kích thước chữ */
+        align-items: lest;
+    }
+
+}
